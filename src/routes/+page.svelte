@@ -162,6 +162,28 @@ const getAllPos = () => {
 
 <svg height={h} width={w} style="border:1px solid black; background:red; z-index:0">
     <!-- Replace these coordinates with your desired points -->
-    <polyline points={coordData} stroke-width='20px' stroke="black" fill="none" />
-    <line x1="0" y1="0" x2="2000" y2="2000" style="stroke:rgb(255,0,0);stroke-width:2;" />
+    <style type="text/css">
+        .st0{fill:none;stroke:#010101;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+      </style>
+    <polyline points={coordData} stroke-width='20px' stroke="black" fill="none" class={'dot'
+    }/>
 </svg>
+
+<style>
+.dot{
+    stroke-dasharray: 100 100;
+    animation-name: dash;
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  
+  @keyframes dash {
+    from {
+      stroke-dashoffset: 0;
+    }
+    to {
+      stroke-dashoffset: 410;
+    }
+  }
+</style>
